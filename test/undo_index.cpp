@@ -7,6 +7,10 @@
 #include <boost/test/data/monomorphic.hpp>
 #include <boost/test/data/test_case.hpp>
 
+#if __GNUC__ > 10  && !defined(__clang__)
+#pragma GCC diagnostic ignored "-Wfree-nonheap-object"
+#endif
+
 
 namespace {
 int exception_counter = 0;
